@@ -17,7 +17,9 @@ it interacts with:
 it should:
 - accept bike
 - release bike
+
 optional:
+
 - know when it is full
 - not accept a bike when it is full
 
