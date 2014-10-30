@@ -30,18 +30,18 @@ it interacts with:
 
 ###Van Class
 it should:
--accept a bike from the station
--release a bike to the garage
+- accept a bike from the station
+- release a bike to the garage
 
 optional:
--accept a bike from the garage
--release a bike when to the station
+- accept a bike from the garage
+- release a bike when to the station
 
 ###Garage Class
 it should:
--accept a broken bike from the van
--fix the bike
--release a fixed bike to the van
+- accept a broken bike from the van
+- fix the bike
+- release a fixed bike to the van
 
 optional:
 - know when it is full
