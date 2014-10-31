@@ -10,4 +10,11 @@ class Van
 		end
 	end
 
+	def drop_off_broken_bikes_to(container)
+		self.broken_bikes.each do |bike|
+			self.release(bike)
+			container.dock(bike)
+		end
+	end
+
 end
