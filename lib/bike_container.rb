@@ -15,14 +15,14 @@ module BikeContainer
 	end
 
 	def dock(bike)
+		raise "Not a bike" unless bike.is_a? Bike
 		raise "Docking Station is full" if full?
-		raise "Not a bike" if !bike.is_a? Bike
 		bikes << bike
 	end
 
 	def release(bike)
 		raise "Docking Station is empty" if empty?
-		bikes.delete(bike) if bike.broken? == false
+		bikes.delete(bike) 
 	end
 
 	def full?

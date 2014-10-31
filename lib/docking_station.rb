@@ -1,4 +1,5 @@
-require "bike_container"
+require "./lib/bike_container"
+
 class DockingStation
 	include BikeContainer
 
@@ -10,5 +11,6 @@ class DockingStation
 		@bikes =[]
 		@capacity = option.fetch(:capacity, DEFAULT_VALUE)
 	end
+
 
 end

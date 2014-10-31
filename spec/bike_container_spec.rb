@@ -1,13 +1,12 @@
 require './lib/bike_container'
 
-class ClassHolder; include BikeContainer; end
 
-describe BikeContainer do
+shared_examples "BikeContainer" do
 
-	let(:holder) {ClassHolder.new}
-	let(:working_bike) { double :bike, broken?: false, is_a?: true}
-	let(:broken_bike) {double :bike, broken?: true, is_a?: true}
-	let(:van) {double :van}
+	let(:holder)       {described_class.new}
+	let(:working_bike) {double :bike, broken?: false, is_a?: true}
+	let(:broken_bike)  {double :bike, broken?: true, is_a?: true}
+	let(:van)          {double :van}
 
 
 	def fill(bike)

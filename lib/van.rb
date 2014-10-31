@@ -1,19 +1,13 @@
-# class Van
+require "./lib/bike_container"
 
-#  	attr_reader :bikes
+class Van
+	include BikeContainer
 
-#  	def initialize
-#  		@bikes = []
-#  	end
+	def collect_broken_bikes_from(container)
+		container.broken_bikes.each do |broken_bike|
+			container.release(broken_bike)
+			dock(broken_bike)
+		end
+	end
 
-#  	# def transfer_from(container, bike)
-#  	# 	container.release(bike)
-#  	# 	@bikes << bike
-#  	# end
-
-#  	def dock(bike)
-# 		raise "Docking Station is full" if full?
-# 		@bikes << bike
-# 	end
-
-# end
+end
