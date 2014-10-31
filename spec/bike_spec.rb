@@ -1,17 +1,22 @@
 require 'bike'
 describe Bike do
 
-	let(:garage) { double :garage }
+	let(:bike){Bike.new}
+	let(:break!){bike.break!}
 
 	it "should not be broken on initialization" do
-		bike =Bike.new
 		expect(bike.broken?).to be false
 	end
 
 	it "should break" do
-		bike = Bike.new
-		bike.break!
+		break!
 		expect(bike.broken?).to be true
+	end
+
+	it "should fix" do
+		break!
+		bike.fix!
+		expect(bike.broken?).to be false
 	end
 
 end
