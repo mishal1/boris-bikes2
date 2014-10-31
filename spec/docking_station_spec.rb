@@ -5,7 +5,7 @@ describe 'DockingStation' do
 	let(:working_bike) { double :bike, broken?: false}
 	let(:broken_bike) {double :bike, broken?: true}
 	let(:station) { DockingStation.new(:capacity=>20)}
-	let(:van) {double :van, :dock => nil}
+	let(:van) {double :van}
 
 	def fill(bike)
 		20.times {station.dock(bike)}
@@ -56,15 +56,29 @@ describe 'DockingStation' do
 
 	it "docking station should not have any broken bikes once they are transfered" do 
 		fill(broken_bike)
-		expect{station.transfer_to(van)}.to change{station.bikes.count}.by -20
-	end
-	#example of to change
+		expect(station.bikes.count).to eq(20)
+		allow(van).to receive(:dock)
+		station.transfer_to(van)
+		expect(station.bikes.count).to eq(0)
+	end	
 
 	it "should transfer only broken bikes to the van" do
 		station.dock(broken_bike)
 		station.dock(working_bike)
-		expect(van).to receive(:dock).with(broken_bike)
+		allow(van).to receive(:dock)
 		station.transfer_to(van)
+		expect(station.bikes.count).to eq(1)
 	end
 
+	it "should receive a fixed bike from the van" do
+		allow(van).to receive(:release).and_return(working_bike)
+		station.transfer_from(van, working_bike)
+		expect(station.bikes.count).to eq(1)
+	end
+
+	#example of to receive and with
+	#receive a bike from van
 end
+
+
+#rspec method- change example in steve boris bike

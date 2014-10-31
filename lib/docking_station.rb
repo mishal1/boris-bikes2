@@ -1,14 +1,12 @@
 class DockingStation
 
 	attr_reader :bikes
-	attr_accessor :transfers
 
 	DEFAULT_VALUE = 10
+
 	def initialize(option = {})
 		@bikes =[]
-		@transfers =[]
 		@capacity = option.fetch(:capacity, DEFAULT_VALUE)
-
 	end
 
 	def dock(bike)
@@ -32,9 +30,13 @@ class DockingStation
 
 	def transfer_to(container)
 		bikes.each do |bike|
-			bikes.delete(bike) if bike.broken?
 			container.dock(bike) if bike.broken?
+			bikes.delete(bike) if bike.broken?
 		end
 	end
 
+	def transfer_from(container, bike)
+		container.release(bike)
+		@bikes << bike
+	end
 end
