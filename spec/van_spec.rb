@@ -7,9 +7,9 @@ describe Van do
 	let(:van)           { Van.new                                        }
 	let(:broken_bike_1) { double :bike, broken?: true, is_a?: true       }
 	let(:broken_bike_2) { double :bike, broken?: true, is_a?: true       }
-	let(:working_bike)  { double :bike, broken?: true                    }
+	let(:working_bike)  { double :bike, broken?: true, is_a?: true       }
 	let(:old_street)    { double :station, broken_bikes: [broken_bike_1, broken_bike_2] }
-	let(:garage)        {double :garage                                  }
+	let(:garage)        {double :garage, available_bikes: [working_bike]   }
 
 	it 'can collect broken bikes from a station' do
 		# we need a station with broken bikes
@@ -46,6 +46,14 @@ describe Van do
 		van.dock(broken_bike_1)
 		expect(garage).to receive(:dock).with(broken_bike_1)
 		van.drop_off_broken_bikes_to(garage)
+	end
+	#we need a garage with fixed bikes
+	#we can pick up fixed bikes from the garage
+	#we expect the van to have those bikes
+
+	it "can pick up fixed bikes from the garage" do
+		expect(garage).to receive(:release).with(working_bike)
+		van.collect_working_bikes_from(garage)
 	end
 
 end

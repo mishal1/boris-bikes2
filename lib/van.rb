@@ -17,4 +17,11 @@ class Van
 		end
 	end
 
+	def collect_working_bikes_from(container)
+		container.available_bikes.each do |working_bike|
+			container.release(working_bike)
+			# dock(working_bike)
+		end
+	end
+
 end
