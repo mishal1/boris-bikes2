@@ -17,3 +17,4 @@ class Bike
 	end
 
 end
+
