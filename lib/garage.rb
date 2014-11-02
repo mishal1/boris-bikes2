@@ -1,9 +1,10 @@
-require "bike_container"
+require "/Users/Mishal/Documents/code/makers/boris-bikes2/lib/bike_container.rb"
 require "/Users/Mishal/Documents/code/makers/boris-bikes2/lib/bike.rb"
-class Garage < Bike
+
+class Garage
 	include BikeContainer
 
-	def ini
-		
+	def fix(bike)
+		bike.fix!
 	end
 end
