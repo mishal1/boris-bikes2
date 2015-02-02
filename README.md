@@ -36,7 +36,7 @@ it should:
 - accept a bike from the station
 - release a bike to the garage
 - accept a bike from the garage
-- release a bike when to the station
+- release a bike to the station
 
 it interacts with:
 - Bike
