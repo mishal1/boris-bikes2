@@ -15,7 +15,7 @@ describe Van do
     dock_bike
   end
 
-  it 'should take a bike from the docking station' do
+  it 'should take a bike from a bike container' do
     expect(docking_station).to receive(:release).with(bike)
     dock_bike
   end
@@ -25,7 +25,7 @@ describe Van do
     expect(van.bikes?.count).to eq 1
   end
 
-  it 'should dock a bike at the docking station' do
+  it 'should dock a bike at a bike container' do
     dock_bike_into_van
     expect(docking_station).to receive(:dock).with(bike)
     release_bike
