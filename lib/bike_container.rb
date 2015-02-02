@@ -15,7 +15,7 @@ module BikeContainer
 
   def release(bike)
     raise 'Docking Station is empty' if @bikes.count === 0
-    @bikes.delete(bike) unless bike.broken?
+    @bikes.delete(bike)
   end
 
 end
