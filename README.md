@@ -9,7 +9,7 @@ boris bikes ruby practice
 
 it should:
 - work on initialization
-- break
+- can break
 
 it interacts with:
 - Docking Station
