@@ -1,7 +1,10 @@
 module BikeContainer
 
-  def initialize
+  attr_reader :capacity
+
+  def initialize(capacity = 10)
     @bikes = []
+    @capacity = capacity
   end
 
   def bikes?
@@ -9,7 +12,7 @@ module BikeContainer
   end
 
   def dock(bike)
-    raise 'Docking Station is full' if @bikes.count >= 10
+    raise 'Docking Station is full' if @bikes.count >= @capacity
     @bikes << bike
   end
 
