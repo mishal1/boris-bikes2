@@ -2,10 +2,6 @@ require 'bike'
 
 describe Bike do
 
-  before(:each) do
-    @bike = Bike.new
-  end
-
   let(:bike) {Bike.new}
   let(:break_bike) {bike.break!}
     
