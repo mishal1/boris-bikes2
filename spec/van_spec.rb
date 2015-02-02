@@ -38,4 +38,8 @@ describe Van do
     expect(van.bikes?.count).to eq 0
   end
 
+  it 'should have a defualt capacity of 10 bikes' do 
+    expect(van.capacity).to eq 10
+  end
+
 end

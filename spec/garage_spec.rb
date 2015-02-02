@@ -12,5 +12,9 @@ describe Garage do
     expect(broken_bike).to receive(:fix!)
     garage.fix_bikes
   end
+
+  it 'should have a default capacity of 20 bikes' do
+    expect(garage.capacity).to eq 20
+  end
   
 end

@@ -21,17 +21,13 @@ shared_examples 'a Bike Container' do
   end
 
   it 'should not dock a bike if the docking station is full' do
-    10.times {holder.dock(bike)}
+    capacity = holder.capacity
+    capacity.times {holder.dock(bike)}
     expect{holder.dock(bike)}.to raise_error(RuntimeError)
   end
 
   it 'should should not release a bike if there are no bikes' do 
     expect{release_bike}.to raise_error(RuntimeError)
-  end
-
-  it 'can have a set capacity' do
-    holder_with_capacity = described_class.new(20)
-    expect(holder_with_capacity.capacity).to eq(20)
   end
 
 end

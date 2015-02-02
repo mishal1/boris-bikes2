@@ -1,6 +1,11 @@
 class Garage
   include BikeContainer
 
+  def initialize
+    super
+    @capacity = 20
+  end
+
   def dock(bike)
     raise "The bike is not broken" if bike.broken? == false
     super

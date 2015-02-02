@@ -2,9 +2,9 @@ module BikeContainer
 
   attr_reader :capacity
 
-  def initialize(capacity = 10)
+  def initialize
     @bikes = []
-    @capacity = capacity
+    @capacity = 10
   end
 
   def bikes?
