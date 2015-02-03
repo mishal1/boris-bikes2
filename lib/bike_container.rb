@@ -1,23 +1,24 @@
 module BikeContainer
 
-  attr_reader :capacity
+  DEFAULT_CAPACITY = 10
 
-  def initialize
-    @bikes = []
-    @capacity = 10
+  attr_accessor :capacity
+
+  def capacity
+    capacity ||= DEFAULT_CAPACITY
   end
 
   def bikes?
-    @bikes
+    @bikes ||=[]
   end
 
   def dock(bike)
-    raise 'Holder is full' if @bikes.count >= @capacity
-    @bikes << bike
+    raise 'Holder is full' if bikes?.count >= capacity
+    bikes? << bike
   end
 
   def release(bike)
-    raise 'Holder is empty' if @bikes.count === 0
+    raise 'Holder is empty' if bikes?.count === 0
     @bikes.delete(bike)
   end
 

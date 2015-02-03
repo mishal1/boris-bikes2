@@ -1,9 +1,8 @@
 class Garage
   include BikeContainer
 
-  def initialize
-    super
-    @capacity = 20
+  def capacity
+    20
   end
 
   def dock(bike)
