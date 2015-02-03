@@ -8,11 +8,11 @@ class User
   end
 
   def break_bike
-    @bikes.first.break!
+    @bikes.first.break
   end
 
   def take_bike_from(container, bike)
-    raise 'That bike is broken!' if bike.broken?
+    raise 'That bike is broken!' if bike.broken
     super
   end
 

@@ -6,13 +6,13 @@ class Garage
   end
 
   def dock(bike)
-    raise "The bike is not broken" if bike.broken? == false
+    raise "The bike is not broken" if bike.broken == false
     super
   end
 
   def fix_bikes
     @bikes.each do |bike| 
-      bike.fix!
+      bike.fix
     end
   end
 

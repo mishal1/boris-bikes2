@@ -3,7 +3,7 @@ describe 'integration test' do
   before(:each) do
     @bike = Bike.new
     @broken_bike = Bike.new
-    @broken_bike.break!
+    @broken_bike.break
     @van = Van.new
     @garage = Garage.new
     @user = User.new
@@ -17,8 +17,8 @@ describe 'integration test' do
   end
 
   def test_bike_count(holder1, holder2, count1, count2)
-    expect(holder1.bikes?.count).to eq count1
-    expect(holder2.bikes?.count).to eq count2
+    expect(holder1.bikes.count).to eq count1
+    expect(holder2.bikes.count).to eq count2
   end
 
   def van_takes_bike
@@ -31,7 +31,7 @@ describe 'integration test' do
   end
 
   it 'a docking station should have bikes' do
-    expect(@docking_station.bikes?.count).to eq 2
+    expect(@docking_station.bikes.count).to eq 2
   end
 
   it 'a user can take a bike from the docking station' do
@@ -41,13 +41,13 @@ describe 'integration test' do
 
   it 'a user cannot take a broken bike from the docking station' do
     expect{@user.take_bike_from(@docking_station, @broken_bike)}.to raise_error(RuntimeError)
-    expect(@docking_station.bikes?.count).to eq 2
+    expect(@docking_station.bikes.count).to eq 2
   end
 
   it 'a user can break a bike' do
     user_takes_bike
     @user.break_bike
-    expect(@user.bikes?.first.broken?).to eq true
+    expect(@user.bikes.first.broken).to eq true
   end
 
   it 'a user can return a bike to the docking station' do
@@ -81,7 +81,7 @@ describe 'integration test' do
   it 'a garage can fix a broken bike' do
     drop_off_bike_to_garage
     @garage.fix_bikes
-    expect(@garage.bikes?.first.broken?).to eq false
+    expect(@garage.bikes.first.broken).to eq false
   end
 
 end
