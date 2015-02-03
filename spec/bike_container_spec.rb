@@ -20,7 +20,7 @@ shared_examples 'a Bike Container' do
     expect(holder.bikes?.count).to eq 0
   end
 
-  it 'should not dock a bike if the docking station is full' do
+  it 'should not dock a bike if the holder is full' do
     capacity = holder.capacity
     capacity.times {holder.dock(bike)}
     expect{holder.dock(bike)}.to raise_error(RuntimeError)

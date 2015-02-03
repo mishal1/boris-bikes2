@@ -12,12 +12,12 @@ module BikeContainer
   end
 
   def dock(bike)
-    raise 'Docking Station is full' if @bikes.count >= @capacity
+    raise 'Holder is full' if @bikes.count >= @capacity
     @bikes << bike
   end
 
   def release(bike)
-    raise 'Docking Station is empty' if @bikes.count === 0
+    raise 'Holder is empty' if @bikes.count === 0
     @bikes.delete(bike)
   end
 

@@ -14,6 +14,18 @@ it should:
 it interacts with:
 - Docking Station
 
+###User Class
+
+it should:
+- have no bikes when initialized
+- be able to take a bike from the docking station
+- be able to dock a bike at the docking station
+- be able to break a bike
+
+it interacts with:
+- Docking Station
+- Bike
+
 ###Docking Station Class
 
 it should:
@@ -23,8 +35,7 @@ it should:
 - not accept a bike when it is full
 - know when it is empty
 - not release a bike when it is empty
-- not release a broken bike
-- transfer broken bikes
+- not release a broken bike to a user
 
 it interacts with:
 - Bike
