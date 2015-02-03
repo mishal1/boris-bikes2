@@ -3,7 +3,7 @@ require 'bike_transfer'
 shared_examples 'Bike Transfer' do
 
   let(:holder)          {described_class.new}
-  let(:bike)            {double :bike}
+  let(:bike)            {double :bike, broken?: false}
   let(:docking_station) {double :docking_station}
   let(:dock_bike)       {holder.take_bike_from(docking_station, bike)}
   let(:release_bike)    {holder.release_bike_to(docking_station, bike)}
