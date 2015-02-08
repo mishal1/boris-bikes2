@@ -1,3 +1,4 @@
+require 'spec_helper'
 require 'bike_transfer'
 
 shared_examples 'Bike Transfer' do

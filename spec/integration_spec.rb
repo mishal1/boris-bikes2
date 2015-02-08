@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 describe 'integration test' do
   
   before(:each) do

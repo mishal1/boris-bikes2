@@ -1,71 +1,20 @@
-Boris Bikes2
-==============
-boris bikes ruby practice
+#Boris Bikes
 
-##CRC Cards
+Week 1 at Makers Academy.
 
+##Context
 
-###Bike Class
-
-it should:
-- work on initialization
-- can break
-
-it interacts with:
-- Docking Station
-
-###User Class
-
-it should:
-- have no bikes when initialized
-- be able to take a bike from the docking station
-- be able to dock a bike at the docking station
-- be able to break a bike
-
-it interacts with:
-- Docking Station
-- Bike
-
-###Docking Station Class
-
-it should:
-- accept bike
-- release bike
-- know when it is full
-- not accept a bike when it is full
-- know when it is empty
-- not release a bike when it is empty
-- not release a broken bike to a user
-
-it interacts with:
-- Bike
-- Van
-
-###Van Class
-
-it should:
-- accept a bike from the station
-- release a bike to the garage
-- accept a bike from the garage
-- release a bike to the station
-
-it interacts with:
-- Bike
-- Garage
-- Docking Station
+This was the first project at Maker's Academy. We created a simple system for managing Boris Bikes in London. The system keeps track of a number of docking stations and the bikes. It allows you to rent the bikes and return them. Occasionally the bikes will break and then they will be unavailable for rental. There is also a garage to fix the bikes and a van to move the bikes between the stations and the garage.
 
 
-###Garage Class
+##Learning Objectives
 
-it should:
-- accept a broken bike from the van
-- fix the bike
-- release a fixed bike to the van
-- know when it is full
-- not accept a bike when it is full
-- know when it is empty
-- not release a bike when it is empty
+- Object-Oriented Programming
+- Object-Oriented Design
+- Test-Driven Development
 
-it interacts with:
-- Bike
-- Van
+
+##Technologies used
+
+- Ruby
+- Rspec
